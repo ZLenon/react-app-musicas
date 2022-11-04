@@ -5,7 +5,7 @@ class Album extends React.Component {
   render() {
     return (
       <div data-testid="page-album">
-        <h1>ALBUM</h1>
+        <h1>🗃️ ALBUM 🔊</h1>
         <Header />
       </div>
     );

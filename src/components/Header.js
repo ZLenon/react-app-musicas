@@ -23,11 +23,11 @@ class Header extends React.Component {
       <header data-testid="header-component">
         {loading ? <Loading /> : <h3 data-testid="header-user-name">{user.name}</h3> }
 
-        <Link to="/search" data-testid="link-to-search">Search</Link>
-        <Link to="/album/:id" data-testid="link-to-album">Album</Link>
-        <Link to="/favorites" data-testid="link-to-favorites">Favorites</Link>
-        <Link to="/profile" data-testid="link-to-profile">Profile</Link>
-        <Link to="/profile/edit" data-testid="link-to-edit">Profile Edit</Link>
+        <Link to="/search" id="btn" data-testid="link-to-search">Search</Link>
+        <Link to="/album/:id" id="btn" data-testid="link-to-album">Album</Link>
+        <Link to="/favorites" id="btn" data-testid="link-to-favorites">Favorites</Link>
+        <Link to="/profile" id="btn" data-testid="link-to-profile">Profile</Link>
+        <Link to="/profile/edit" id="btn" data-testid="link-to-edit">Profile Edit</Link>
       </header>
     );
   }

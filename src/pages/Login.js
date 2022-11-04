@@ -33,7 +33,7 @@ class Login extends React.Component {
     const disabilit = name.length >= MAGIC_NUMBER;
     return (
       <div data-testid="page-login">
-        <h1>LOGIN</h1>
+        <h1>LOGIN👔 </h1>
         <label htmlFor="name-input">
           Usuario:-
           <input
