@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import Loading from './Loading';
+import Loading from '../components/Loading';
 import { createUser } from '../services/userAPI';
 
 class Login extends React.Component {
@@ -33,6 +33,7 @@ class Login extends React.Component {
     const disabilit = name.length >= MAGIC_NUMBER;
     return (
       <div data-testid="page-login">
+        <h1>LOGIN</h1>
         <label htmlFor="name-input">
           Usuario:-
           <input
