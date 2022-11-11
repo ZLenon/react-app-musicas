@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import MusicCard from '../components/MusicCard';
 import getMusics from '../services/musicsAPI';
-import Loading from '../components/Loading';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
+// import Loading from '../components/Loading';
 
 class Album extends React.Component {
   constructor() {
@@ -11,6 +12,7 @@ class Album extends React.Component {
     this.state = {
       apiSounds: [],
       firstINFO: {},
+      favSound: [],
     };
   }
 
@@ -28,11 +30,12 @@ class Album extends React.Component {
     // console.log(spredAPI);
     // console.log(shifAPI);
     // console.log(spliceAPI);
-    this.setState({ apiSounds: spredAPI, firstINFO: shifAPI });
+    const favSounds = await getFavoriteSongs(); // musicas favoritas salvas exporta a const para MusicCar linha 53
+    this.setState({ apiSounds: spredAPI, firstINFO: shifAPI, favSound: favSounds });
   };
 
   render() {
-    const { apiSounds, firstINFO } = this.state;
+    const { apiSounds, firstINFO, favSound } = this.state;
     return (
       <div data-testid="page-album">
         <h1>🗃️ ALBUM 🔊</h1>
@@ -45,6 +48,9 @@ class Album extends React.Component {
               key={ sound.trackId }
               trackName={ sound.trackName }
               previewUrl={ sound.previewUrl }
+              sound={ sound } // prop passada para o component music card
+              trackId={ sound.trackId }// prop passada para o component music card
+              favSound={ favSound }// prop com as musicasa favoritas
             />
           ))
         }
