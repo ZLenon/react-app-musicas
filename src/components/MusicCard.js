@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Loading from './Loading';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, removeSong } from '../services/favoriteSongsAPI';
 
 class MusicCard extends React.Component {
   constructor() {
@@ -12,9 +12,9 @@ class MusicCard extends React.Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     const { trackId, favSound } = this.props;
-    console.log(favSound);
+    // console.log(favSound);
     const musicaIgual = favSound.some((music) => (music.trackId === trackId));// retorna quando o 1 for verdadeiro
     if (musicaIgual === true) { // quando a musica for igual o checked vira true
       this.setState({ check: true });
@@ -33,6 +33,7 @@ class MusicCard extends React.Component {
       this.setState({ check: checked });
     } else {
       this.setState({ check: checked });
+      await removeSong(sound); // funcao remove a musica favorita quando o chek é falso
     }
   };
 
