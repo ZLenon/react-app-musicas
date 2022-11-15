@@ -35,13 +35,13 @@ class Album extends React.Component {
   };
 
   render() {
-    const { apiSounds, firstINFO, favSound } = this.state;
+    const { apiSounds, firstINFO: { artistName, collectionName }, favSound } = this.state;
     return (
       <div data-testid="page-album">
         <h1>🗃️ ALBUM 🔊</h1>
         <Header />
-        <h2 data-testid="artist-name">{ firstINFO.artistName}</h2>
-        <h3 data-testid="album-name">{firstINFO.collectionName}</h3>
+        <h2 data-testid="artist-name">{ artistName }</h2>
+        <h3 data-testid="album-name">{ collectionName }</h3>
         {
           apiSounds.map((sound) => (
             <MusicCard
