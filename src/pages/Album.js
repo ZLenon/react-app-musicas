@@ -11,7 +11,7 @@ class Album extends React.Component {
     super();
     this.state = {
       apiSounds: [],
-      firstINFO: {},
+      firstInfoAlbum: {},
       favSound: [],
     };
   }
@@ -23,19 +23,24 @@ class Album extends React.Component {
   loadMusic = async () => {
     const { match: { params: { id } } } = this.props;
     const returnAPI = await getMusics(id);
-    const spredAPI = [...returnAPI]; // espalha os objetos
-    const shifAPI = spredAPI.shift();// retorna um objeto, so o primeiro
+    const [firsInfo, ...restodaApi] = returnAPI; // tratamento de array (destructuring assignment)
+    // const spredAPI = [...returnAPI]; // espalha os objetos
+    // const shifAPI = spredAPI.shift();// retorna um objeto, so o primeiro
+    // o test so passa se retornar a primeira musica em "objeto", os metodos a baixo retorna em "array"
     // const spliceAPI = spredAPI.splice(0, 1);// retorna um array com 1 objeto, somente o primeiro
-    // console.log(returnAPI);
-    // console.log(spredAPI);
-    // console.log(shifAPI);
-    // console.log(spliceAPI);
-    const favSounds = await getFavoriteSongs(); // musicas favoritas salvas exporta a const para MusicCar linha 53
-    this.setState({ apiSounds: spredAPI, firstINFO: shifAPI, favSound: favSounds });
+    // const [fistItem] = spredAPI; // array
+    // const firsItem = spredAPI[0]; // array
+    const favSounds = await getFavoriteSongs(); // musicas favoritas salvas exportar a const para MusicCar linha 58
+    this.setState({
+      apiSounds: restodaApi,
+      firstInfoAlbum: firsInfo,
+      favSound: favSounds });
   };
 
   render() {
-    const { apiSounds, firstINFO: { artistName, collectionName }, favSound } = this.state;
+    const { apiSounds,
+      firstInfoAlbum: { artistName, collectionName },
+      favSound } = this.state;
     return (
       <div data-testid="page-album">
         <h1>🗃️ ALBUM 🔊</h1>
