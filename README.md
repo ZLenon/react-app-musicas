@@ -42,6 +42,7 @@ Neste projeto, verificamos capacidade de:
 - Criar links de navegação na aplicação com o componente `Link`;
 
 <h2><strong>Observações técnicas </strong></h2>
+
 Os arquivos `favoriteSongsAPI.js`, `searchAlbumsAPI.js`, `userAPI.js` e `musicsAPI.js`. Esses arquivos serão responsáveis por lidar com as requisições simuladas que serão usadas durante o desenvolvimento. Entenda mais sobre eles abaixo:
 
   <details><summary><strong> <code>userAPI.js</code></strong></summary>
