@@ -22,7 +22,27 @@ npm install
   - Ver o perfil da pessoa logada;
   - Editar o perfil da pessoa logada;
 
-  Os arquivos `favoriteSongsAPI.js`, `searchAlbumsAPI.js`, `userAPI.js` e `musicsAPI.js`. Esses arquivos serão responsáveis por lidar com as requisições simuladas que serão usadas durante o desenvolvimento. Entenda mais sobre eles abaixo:
+
+  <h2><strong> 📃 Habilidades</strong></h2><br />
+
+Neste projeto, verificamos capacidade de:
+
+- Fazer requisições e consumir dados vindos de uma `API`;
+
+- Utilizar os ciclos de vida de um componente React;
+
+- Utilizar a função `setState` de forma a garantir que um determinado código só é executado após o estado ser atualizado
+
+- Utilizar o componente `BrowserRouter` corretamente;
+
+- Criar rotas, mapeando o caminho da URL com o componente correspondente, via `Route`;
+  
+- Utilizar o `Switch` do `React Router`
+
+- Criar links de navegação na aplicação com o componente `Link`;
+
+<h2><strong>Observações técnicas </strong></h2>
+Os arquivos `favoriteSongsAPI.js`, `searchAlbumsAPI.js`, `userAPI.js` e `musicsAPI.js`. Esses arquivos serão responsáveis por lidar com as requisições simuladas que serão usadas durante o desenvolvimento. Entenda mais sobre eles abaixo:
 
   <details><summary><strong> <code>userAPI.js</code></strong></summary>
 
@@ -68,25 +88,5 @@ npm install
   **Atenção:** caso não encontre nenhuma informação, a API retornará um array vazio.
   </details>
 </details>
-
-
-  <h2><strong> 📃 Habilidades</strong></h2><br />
-
-Neste projeto, verificamos capacidade de:
-
-- Fazer requisições e consumir dados vindos de uma `API`;
-
-- Utilizar os ciclos de vida de um componente React;
-
-- Utilizar a função `setState` de forma a garantir que um determinado código só é executado após o estado ser atualizado
-
-- Utilizar o componente `BrowserRouter` corretamente;
-
-- Criar rotas, mapeando o caminho da URL com o componente correspondente, via `Route`;
-
-- Utilizar o `Switch` do `React Router`
-
-- Criar links de navegação na aplicação com o componente `Link`;
-
 
   
